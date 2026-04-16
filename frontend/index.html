@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TTCV TEMPLATE</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/markdown.css">
+<script src="js/markdown.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <pre class="ascii-name">
+████████╗████████╗ ██████╗██╗   ██╗
+╚══██╔══╝╚══██╔══╝██╔════╝██║   ██║
+   ██║      ██║   ██║     ██║   ██║
+   ██║      ██║   ██║     ██║   ██║
+  ██║      ██║   ╚██████╗╚█████╔╝
+╚═╝      ╚═╝    ╚═════╝ ╚═══╝
+    </pre>
+    <div class="header-sub">TTCV · TEMPLATE · INTERACTIVE · CV</div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-label">navigation</div>
+    <div class="nav-item active" onclick="openPanel('experience')"><span class="nav-arrow">▸</span> Experience</div>
+    <div class="nav-item" onclick="openPanel('projects')"><span class="nav-arrow">›</span> Projects</div>
+    <div class="nav-item" onclick="openPanel('skills')"><span class="nav-arrow">›</span> Skills</div>
+    <div class="nav-item" onclick="openPanel('education')"><span class="nav-arrow">›</span> Education</div>
+  </div>
+
+  <div class="main">
+    <div id="content"></div>
+  </div>
+
+  <div class="chat">
+    <span class="chat-prefix">▸▸</span>
+    <textarea id="chatInput" placeholder="ask anything about Me..." rows="1" maxlength="200"></textarea>
+    <span class="chat-suffix" onclick="submitChat()">[↵]</span>
+  </div>
+
+</div>
+
+</body>
+</html>

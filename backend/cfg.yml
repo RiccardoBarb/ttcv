@@ -1,0 +1,26 @@
+llm:
+  model: mistral-small-3.2-24b-instruct-2506
+  temperature: 0
+  max_tokens: 1024
+  top_p: 1
+  presence_penalty: 0
+  stream: False
+  response_format:
+    type: text
+embedding:
+  model: qwen3-embedding-8b
+  dimensions: 1024
+  encoding_instructions: "Represent this document chunk for retrieval: "
+  retrieval_instructions: "Represent this query for retrieving relevant documents: "
+retrieval:
+  top_k_dense: 3
+  top_k_sparse: 4
+  top_k_reranked: 5
+user_info:
+  main_user: example user
+  linkedin: "[Linkedin profile](https://www.linkedin.com/example)"
+  email: example@email.com
+data_dir: "backend/data"
+history_length: 4 #amount of messages to keep as history
+query_char_limit: 200 #number of acceptable input char
+

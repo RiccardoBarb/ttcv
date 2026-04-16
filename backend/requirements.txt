@@ -1,0 +1,17 @@
+# API
+fastapi==0.135.3
+uvicorn==0.44.0
+slowapi==0.1.9
+# LLM & Embeddings
+openai==1.84.0
+# Retrieval
+faiss-cpu==1.10.0
+bm25s==0.3.3
+# Inference
+pocketflow==0.0.3
+# Data & Utils
+numpy==2.2.6
+pydantic==2.12.5
+python-dotenv==1.2.2
+PyYAML==6.0.3
+tqdm==4.67.3
