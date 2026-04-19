@@ -6,6 +6,8 @@
 
 A personal portfolio site with a conversational assistant that answers questions about your background, projects and experience. The frontend is a static site serving markdown content. The backend is a Python RAG pipeline with hybrid retrieval, a lightweight inference layer built with [Pocketflow](https://github.com/The-Pocket/PocketFlow) and an LLM for response generation.
 
+**Live example**: [www.riccardobarbieri.me](https://www.riccardobarbieri.me)
+
 ---
 
 ## Architecture
