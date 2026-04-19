@@ -198,10 +198,11 @@ docker build \
 ### Run the Container
 
 ```bash
-docker build \
-  --build-arg EMBEDDING_KEY=your_key \
-  --build-arg EMBEDDING_URL=your_base_url \
-  -t ttcv-backend .
+docker run \
+  -p 8000:8000 \
+  -e LLM_KEY=your_key \
+  -e LLM_URL=your_base_url \
+  ttcv-backend
 ```
 
 ### Test
