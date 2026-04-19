@@ -5,6 +5,7 @@ slowapi==0.1.9
 # LLM & Embeddings
 openai==1.84.0
 # Retrieval
+PyStemmer==3.0.0
 faiss-cpu==1.10.0
 bm25s==0.3.3
 # Inference

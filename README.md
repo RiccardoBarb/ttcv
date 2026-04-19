@@ -1,5 +1,9 @@
 # Talk To CV: Personal Portfolio & RAG Assistant
 
+<p align="center">
+  <img src="./ttcv.png" alt="Talk To CV Template"/>
+</p>
+
 A personal portfolio site with a conversational assistant that answers questions about your background, projects and experience. The frontend is a static site serving markdown content. The backend is a Python RAG pipeline with hybrid retrieval, a lightweight inference layer built with [Pocketflow](https://github.com/The-Pocket/PocketFlow) and an LLM for response generation.
 
 ---
@@ -151,9 +155,9 @@ python -m http.server 8080
 Then open `http://localhost:8080`.
 
 ## Logging
- 
+
 Each request is logged as a structured JSON record containing:
- 
+
 | Field | Description |
 |---|---|
 | `timestamp` | UTC time of the request |
@@ -166,7 +170,7 @@ Each request is logged as a structured JSON record containing:
 | `retrieved_context` | Chunks returned by retrieval (if any) |
 | `read_document` | Document read in full on the broad path (if any) |
 | `history` | Conversation history up to the current turn |
- 
+
 ---
 
 ## Configuration
@@ -175,3 +179,41 @@ Backend behavior is controlled by two YAML files:
 
 - **`cfg.yml`** — model names, retrieval parameters (top-k, llm params and so on), chunking settings.
 - **`prompts.yml`** — all prompt templates used across the inference nodes.
+
+---
+
+## Local Deployment with Docker
+
+### Build the Image
+
+The index build step runs during docker build and requires the embedding API key at build time:
+
+```bash
+docker build \
+  --build-arg EMBEDDING_KEY=your_key \
+  --build-arg EMBEDDING_URL=your_base_url \
+  -t ttcv-backend .
+```
+
+### Run the Container
+
+```bash
+docker build \
+  --build-arg EMBEDDING_KEY=your_key \
+  --build-arg EMBEDDING_URL=your_base_url \
+  -t ttcv-backend .
+```
+
+### Test
+
+```bash
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"query": "what projects have you worked on?", "history": []}'
+```
+The frontend can be served separately as usual:
+
+```bash
+cd frontend
+python -m http.server 8080
+```
